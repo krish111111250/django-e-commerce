@@ -1,21 +1,18 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8000',
+    baseURL: 'https://django-e-commerce-production-f7fc.up.railway.app',
 });
 
-// Automatically attach token to every request
-axiosInstance.interceptors.request.use(
-    (config) => {
-        const token = localStorage.getItem('token');
+axiosInstance.interceptors.request.use((config) => {
+    const userInfo = localStorage.getItem('userInfo');
+    if (userInfo) {
+        const { token } = JSON.parse(userInfo);
         if (token) {
-            config.headers['Authorization'] = `Bearer ${token}`;
+            config.headers.Authorization = `Bearer ${token}`;
         }
-        return config;
-    },
-    (error) => {
-        return Promise.reject(error);
     }
-);
+    return config;
+});
 
 export default axiosInstance;
