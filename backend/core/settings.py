@@ -112,3 +112,7 @@ SIMPLE_JWT = {
 
 # --- CORS CONFIG ---
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://django-e-commerce-psi.vercel.app",
+]
+CORS_ALLOW_ALL_ORIGINS = True
