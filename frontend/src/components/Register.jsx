@@ -22,7 +22,7 @@ function Register() {
     }
     setLoading(true);
     try {
-      await axios.post('http://127.0.0.1:8000/api/auth/register/', { username, email, password });
+      await axios.post('https://django-e-commerce-production-f7fc.up.railway.app/api/auth/register/', { username, email, password });
       navigate('/login');
     } catch (error) {
       setError(error.response ? JSON.stringify(error.response.data) : "Network Error: Is the Django server running?");

@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'http://127.0.0.1:8000',
+      target: 'https://django-e-commerce-production-f7fc.up.railway.app',
       changeOrigin: true,
     })
   );

@@ -57,7 +57,7 @@ function OrderScreen() {
     const getImageUrl = (img) => {
         if (!img) return null;
         if (img.startsWith('http')) return img;
-        return `http://127.0.0.1:8000${img}`;
+        return `https://django-e-commerce-production-f7fc.up.railway.app${img}`;
     };
 
     const getStatusStyle = (status) => {
